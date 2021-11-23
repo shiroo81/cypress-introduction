@@ -1,5 +1,21 @@
+
+
 describe('Complete Meetup test setup', () => {
-  it('uses fixtures as testdata files', () => {
+
+  it('should be the same as the snapshot', () => {
+    cy.get('#page').toMatchImageSnapshot({
+      imageConfig: {
+        threshold: 0.003
+      },
+      name: 'homepage'
+    });
+  });
+
+  it('should use selectors', () => {
+    expect( cy.get('h1').contains('Dive in! There are so many things to do on Meetup'));
+  });
+
+  it('uses different selectors and fixtures as testdata files', () => {
     cy.fixture('searchdata').then((s) => {
       cy.get('#search-keyword-input').click();
       cy.dataCy('search-keyword-input').should("be.visible");
@@ -11,6 +27,9 @@ describe('Complete Meetup test setup', () => {
         .type(s.location);
       cy.get("div").contains(`${s.location}, Netherlands`).click();
     });
+  });
+
+    it('should use intelligent waiting and validate results', () => {
 
     cy.intercept({
       method: 'GET',
@@ -54,7 +73,16 @@ describe('Complete Meetup test setup', () => {
     );
   });
 
+  it('should debug the information', () => {
+    cy.get('span').contains('Hosted by').debug();
+  });
+  
+  it('should test the site on iphone XR.', () => {
+    cy.viewport(414, 896);
+    cy.screenshot();
+  })
   before(() => {
     cy.visit('');
+    cy.title().should('eq', 'Meetup - We are what we do');
   });
 });

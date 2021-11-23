@@ -1,0 +1,12 @@
+{
+    "name": "cypress-introduction",
+    "version": "1.0.0",
+    "description": "A Cypress project",
+    "scripts": {
+        "cy:run:chrome": "cypress run --browser chrome",
+        "cy:run:firefox": "cypress run --browser firefox"
+    },
+    "dependencies": {
+        "cypress": "^9.0.0"
+    }
+}

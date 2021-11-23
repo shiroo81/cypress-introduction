@@ -1,3 +1,7 @@
 {
-    "baseUrl" : "https://www.meetup.com/"
+    "baseUrl" : "https://www.meetup.com/",
+    "ignoreTestFiles": [
+        "**/__snapshots__/*",
+        "**/__image_snapshots__/*"
+      ]
 }
