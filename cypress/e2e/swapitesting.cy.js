@@ -1,4 +1,4 @@
-describe("Given there is a Star Wars provided", () => {
+describe("Given there is a Star Wars API provided", () => {
   describe("When I search for spaceships", () => {
     let result;
     it(`should verify the Death Star Hyperdrive`, () => {

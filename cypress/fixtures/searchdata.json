@@ -1,4 +1,8 @@
-{
+ [{
   "search": "cypress playwright",
   "location": "Hilversum"
-}
+},
+{
+  "search": "playwright",
+  "location": "Rotterdam"
+}]
